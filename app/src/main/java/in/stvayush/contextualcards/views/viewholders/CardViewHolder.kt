@@ -1,13 +1,13 @@
 package `in`.stvayush.contextualcards.views.viewholders
 
-import `in`.stvayush.contextualcards.ContextualCardsApplication
-import `in`.stvayush.contextualcards.databinding.LayoutImageCardBinding
-import `in`.stvayush.contextualcards.databinding.LayoutSmallCardBinding
+import `in`.stvayush.contextualcards.databinding.*
 import `in`.stvayush.contextualcards.models.Card
+import `in`.stvayush.contextualcards.utils.CtaConfigurer.configureCta
+import `in`.stvayush.contextualcards.utils.DeepLinkParser.processDeepLink
 import `in`.stvayush.contextualcards.utils.ImageLoader.loadImage
 import `in`.stvayush.contextualcards.utils.TextFormatter.format
-import android.content.Intent
-import android.net.Uri
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
@@ -26,7 +26,7 @@ class CardViewHolder(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBin
                     icon?.imgUrl?.let { smallCardIcon.loadImage(it) }
                     url?.let {
                         smallCardView.setOnClickListener {
-                            initializeAction(this.url)
+                            processDeepLink(this.url)
                         }
                     }
                 }
@@ -39,24 +39,77 @@ class CardViewHolder(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBin
             with(imageCardBinding) {
                 card.bgImage?.imgUrl?.let { imageCard.loadImage(it) }
                 imageCard.setOnClickListener {
-                    card.url?.let { initializeAction(it) }
+                    card.url?.let { processDeepLink(it) }
                 }
             }
         }
     }
 
-
-    // FIXME: 22/7/21 Move this to Utils package
-    companion object {
-        private fun initializeAction(url: String): Boolean {
-            val intent = Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse(url)
-                flags = Intent.FLAG_ACTIVITY_NEW_TASK
+    inner class BigCardViewHolder(private val bigCardBinding: LayoutBigCardBinding) {
+        fun bindBigCard(card: Card) {
+            with(bigCardBinding) {
+                with(card) {
+                    tvTitle.format(formattedTitle, title)
+                    tvDescription.format(formattedDescription, description)
+                    ctaList?.let { buttonAction.configureCta(it[0]) }
+                    bgImage?.imgUrl?.let { imageBigCard.loadImage(it, true) }
+                    url?.let {
+                        bigCardView.setOnClickListener {
+                            processDeepLink(url)
+                        }
+                    }
+                }
             }
-            ContextualCardsApplication.getContext().startActivity(intent)
-            return true
         }
+    }
 
+    /** Since this card isn't present in response from server, so the assumption is made that it bears
+     ** same attributes as big card along with 2 buttons that call for cta and (maybe) an image at center to make
+     *  the card look good
+     */
+    inner class CenterCardViewHolder(private val centerCardBinding: LayoutCenterCardBinding) {
+        fun bindCenterCard(card: Card) {
+            with(centerCardBinding) {
+                with(card) {
+                    centerCardTitle.format(formattedTitle, title)
+                    centerCardDescription.format(formattedDescription, description)
+                    icon?.imgUrl?.let { centerCardIcon.loadImage(it) }
+                    url?.let {
+                        layoutCenterCard.setOnClickListener {
+                            processDeepLink(url)
+                        }
+                    }
+                    ctaList?.let {
+                        centerCardButtonLhs.configureCta(it[0])
+                        centerCardButtonRhs.configureCta(it[1])
+                    }
+                }
+            }
+        }
+    }
+
+    inner class SmallCardWithArrowViewHolder(private val layoutSmallCardWithArrowBinding: LayoutSmallCardWithArrowBinding) {
+        fun bindSmallCardWithArrow(card: Card) {
+            with(layoutSmallCardWithArrowBinding) {
+                with(card) {
+                    smallCardWithArrowTitle.format(formattedTitle, title)
+                    icon?.imgUrl?.let { smallCardWithArrowImage.loadImage(it) }
+                    url?.let {
+                        smallCardWithArrowView.setOnClickListener {
+                            processDeepLink(url)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    inner class GenzCardViewHolder(private val layoutGenzCardBinding: LayoutGenzCardBinding) {
+        fun bindGenzCard(card: Card) {
+            with(layoutGenzCardBinding) {
+                card.bgImage?.imgUrl?.let { smallHcImage.loadImage(it) }
+            }
+        }
     }
 
 }
