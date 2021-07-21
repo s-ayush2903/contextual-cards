@@ -34,6 +34,9 @@ android {
 
 def retrofit_version = "2.9.0"
 def okhttp_interceptor_version = "4.9.0"
+def rx_java_version = "3.0.6"
+def rx_android_version = "3.0.0"
+def retrofit_rx_adapter_version = "2.9.0"
 
 dependencies {
 
@@ -47,6 +50,13 @@ dependencies {
   implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
   implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
   implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_interceptor_version"
+
+  // RxJava
+  implementation "io.reactivex.rxjava3:rxjava:$rx_java_version"
+  implementation "io.reactivex.rxjava3:rxandroid:$rx_android_version"
+
+  // Retrofit to RxJava Converter factory
+  implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_rx_adapter_version"
 
   testImplementation 'junit:junit:4.+'
   androidTestImplementation 'androidx.test.ext:junit:1.1.3'
