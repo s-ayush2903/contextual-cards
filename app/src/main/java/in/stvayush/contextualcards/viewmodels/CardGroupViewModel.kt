@@ -19,7 +19,7 @@ import java.util.concurrent.TimeoutException
 
 class CardGroupViewModel: ViewModel() {
 
-    private val TAG = CardGroupViewModel::class.java::getSimpleName.toString()
+    private val TAG = "CardGroupViewModel"
     private val repository = Repository()
     var fetchSuccessful: MutableLiveData<Boolean> = MutableLiveData()
 
@@ -31,7 +31,8 @@ class CardGroupViewModel: ViewModel() {
             object :
                 DisposableObserver<CardGroupObject>() {
                 override fun onNext(cardGroupObject: CardGroupObject) {
-                    val cardGroup: List<CardGroup> = cardGroupObject.cardGroup
+                    cardGroup = cardGroupObject.cardGroup
+                    fetchSuccessful.value = true
                     Log.d(
                         TAG,
                         "onNext: Hit the endpoint! Listing data observed from the server:---\n $cardGroup"

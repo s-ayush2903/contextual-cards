@@ -23,10 +23,16 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
+
+  buildFeatures {
+    viewBinding true
+  }
+
   compileOptions {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
+
   kotlinOptions {
     jvmTarget = '1.8'
   }
@@ -37,6 +43,7 @@ def okhttp_interceptor_version = "4.9.0"
 def rx_java_version = "3.0.6"
 def rx_android_version = "3.0.0"
 def retrofit_rx_adapter_version = "2.9.0"
+def glide_version = "4.11.0"
 
 dependencies {
 
@@ -57,6 +64,10 @@ dependencies {
 
   // Retrofit to RxJava Converter factory
   implementation "com.squareup.retrofit2:adapter-rxjava3:$retrofit_rx_adapter_version"
+
+  // Glide
+  implementation "com.github.bumptech.glide:glide:$glide_version"
+  annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
   testImplementation 'junit:junit:4.+'
   androidTestImplementation 'androidx.test.ext:junit:1.1.3'
