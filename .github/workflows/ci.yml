@@ -1,0 +1,23 @@
+name: application-ci
+
+on:
+  push:
+
+jobs:
+  build-app:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build Application
+        run: ./gradlew assemble
+
+      - name: Publish Build Artifact(APK)
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: Contextual Cards APK
+          path: |
+            **/*.apk
