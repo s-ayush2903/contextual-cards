@@ -6,8 +6,6 @@ import `in`.stvayush.contextualcards.utils.CtaConfigurer.configureCta
 import `in`.stvayush.contextualcards.utils.DeepLinkParser.processDeepLink
 import `in`.stvayush.contextualcards.utils.ImageLoader.loadImage
 import `in`.stvayush.contextualcards.utils.TextFormatter.format
-import android.graphics.Color
-import android.graphics.drawable.GradientDrawable
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 
@@ -37,7 +35,7 @@ class CardViewHolder(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBin
     inner class ImageCardViewHolder(private val imageCardBinding: LayoutImageCardBinding) {
         fun bindImageCard(card: Card) {
             with(imageCardBinding) {
-                card.bgImage?.imgUrl?.let { imageCard.loadImage(it) }
+                card.bgImage?.imgUrl?.let { imageCardImage.loadImage(it) }
                 imageCard.setOnClickListener {
                     card.url?.let { processDeepLink(it) }
                 }
@@ -107,7 +105,10 @@ class CardViewHolder(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBin
     inner class GenzCardViewHolder(private val layoutGenzCardBinding: LayoutGenzCardBinding) {
         fun bindGenzCard(card: Card) {
             with(layoutGenzCardBinding) {
-                card.bgImage?.imgUrl?.let { smallHcImage.loadImage(it) }
+                with(card) {
+                    bgImage?.imgUrl?.let { genzCardImageView.loadImage(it) }
+                    url?.let { genzCardView.setOnClickListener { processDeepLink(url) } }
+                }
             }
         }
     }

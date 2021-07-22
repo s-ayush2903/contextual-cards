@@ -18,7 +18,7 @@ data class CardGroup(
     enum class DesignType {
 
         @SerializedName("HC1")
-        SMALL_DISPLAY_CARD,
+        SMALL_DISPLAY_CARD, // Scrollable
 
         @SerializedName("HC3")
         BIG_DISPLAY_CARD,
@@ -27,13 +27,13 @@ data class CardGroup(
         CENTER_CARD,
 
         @SerializedName("HC5")
-        IMAGE_CARD,
+        IMAGE_CARD, // Scrollable
 
         @SerializedName("HC6")
-        SMALL_CARD_WITH_ARROW,
+        SMALL_CARD_WITH_ARROW, // Non Scrollable
 
         @SerializedName("HC9")
-        GENZ_CARD
+        GENZ_CARD // Scrollable
 
     }
 }

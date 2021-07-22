@@ -8,4 +8,11 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="10dp" />
+    app:cardCornerRadius="10dp" >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/image_card_image"
+        android:layout_height="match_parent"/>
+
+</androidx.cardview.widget.CardView>

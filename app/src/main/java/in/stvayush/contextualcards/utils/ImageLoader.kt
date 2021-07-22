@@ -2,6 +2,7 @@ package `in`.stvayush.contextualcards.utils
 
 import android.graphics.drawable.Drawable
 import android.view.View
+import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
