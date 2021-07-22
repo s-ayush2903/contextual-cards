@@ -18,23 +18,19 @@ data class CardGroup(
     enum class DesignType {
 
         @SerializedName("HC1")
-        SMALL_DISPLAY_CARD, // Scrollable
+        SMALL_DISPLAY_CARD,
 
         @SerializedName("HC3")
         BIG_DISPLAY_CARD,
 
-        @SerializedName("HC4")
-        CENTER_CARD,
-
         @SerializedName("HC5")
-        IMAGE_CARD, // Scrollable
+        IMAGE_CARD,
 
         @SerializedName("HC6")
-        SMALL_CARD_WITH_ARROW, // Non Scrollable
+        SMALL_CARD_WITH_ARROW,
 
         @SerializedName("HC9")
-        GENZ_CARD // Scrollable
-
+        DYNAMIC_WIDTH_CARD
     }
 }
 

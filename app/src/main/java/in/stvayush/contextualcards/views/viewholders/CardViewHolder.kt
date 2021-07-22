@@ -61,31 +61,6 @@ class CardViewHolder(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBin
         }
     }
 
-    /** Since this card isn't present in response from server, so the assumption is made that it bears
-     ** same attributes as big card along with 2 buttons that call for cta and (maybe) an image at center to make
-     *  the card look good
-     */
-    inner class CenterCardViewHolder(private val centerCardBinding: LayoutCenterCardBinding) {
-        fun bindCenterCard(card: Card) {
-            with(centerCardBinding) {
-                with(card) {
-                    centerCardTitle.format(formattedTitle, title)
-                    centerCardDescription.format(formattedDescription, description)
-                    icon?.imgUrl?.let { centerCardIcon.loadImage(it) }
-                    url?.let {
-                        layoutCenterCard.setOnClickListener {
-                            processDeepLink(url)
-                        }
-                    }
-                    ctaList?.let {
-                        centerCardButtonLhs.configureCta(it[0])
-                        centerCardButtonRhs.configureCta(it[1])
-                    }
-                }
-            }
-        }
-    }
-
     inner class SmallCardWithArrowViewHolder(private val layoutSmallCardWithArrowBinding: LayoutSmallCardWithArrowBinding) {
         fun bindSmallCardWithArrow(card: Card) {
             with(layoutSmallCardWithArrowBinding) {
@@ -102,12 +77,12 @@ class CardViewHolder(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBin
         }
     }
 
-    inner class GenzCardViewHolder(private val layoutGenzCardBinding: LayoutGenzCardBinding) {
-        fun bindGenzCard(card: Card) {
-            with(layoutGenzCardBinding) {
+    inner class DynamicWidthCardViewHolder(private val layoutDynamicWidthCardBinding: LayoutDynamicWidthCardBinding) {
+        fun bindDynamicWidthCard(card: Card) {
+            with(layoutDynamicWidthCardBinding) {
                 with(card) {
-                    bgImage?.imgUrl?.let { genzCardImageView.loadImage(it) }
-                    url?.let { genzCardView.setOnClickListener { processDeepLink(url) } }
+                    bgImage?.imgUrl?.let { dynamicWidthCardImageView.loadImage(it) }
+                    url?.let { dynamicWidthCardView.setOnClickListener { processDeepLink(url) } }
                 }
             }
         }

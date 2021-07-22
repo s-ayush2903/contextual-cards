@@ -21,12 +21,11 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
     private val cardData = ArrayList<Card>()
 
     /** Sequenced on the basis of their HC values, increasing order, top to bottom */
-    private lateinit var layoutSmallCardBinding: LayoutSmallCardBinding     // HC1
-    private lateinit var layoutBigCardBinding: LayoutBigCardBinding         // HC3
-    private lateinit var layoutCenterCardBinding: LayoutCenterCardBinding   // HC4
-    private lateinit var layoutImageCardBinding: LayoutImageCardBinding     // HC5
+    private lateinit var layoutSmallCardBinding: LayoutSmallCardBinding       // HC1
+    private lateinit var layoutBigCardBinding: LayoutBigCardBinding           // HC3
+    private lateinit var layoutImageCardBinding: LayoutImageCardBinding       // HC5
     private lateinit var layoutSmallCardWithArrowBinding: LayoutSmallCardWithArrowBinding // HC6
-    private lateinit var layoutGenzCardBinding: LayoutGenzCardBinding       // HC9
+    private lateinit var layoutDynamicWidthCardBinding: LayoutDynamicWidthCardBinding // HC9
 
     private lateinit var layoutBigCardMenuBinding: LayoutBigCardMenuBinding
 
@@ -55,10 +54,6 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
                 }
             }
 
-            CENTER_CARD -> {
-                layoutCenterCardBinding = LayoutCenterCardBinding.inflate(inflater, parent, false)
-                layoutCenterCardBinding
-            }
             IMAGE_CARD -> {
                 layoutImageCardBinding = LayoutImageCardBinding.inflate(inflater, parent, false)
                 layoutImageCardBinding
@@ -69,9 +64,9 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
                 layoutSmallCardWithArrowBinding
             }
 
-            GENZ_CARD -> {
-                layoutGenzCardBinding = LayoutGenzCardBinding.inflate(inflater, parent, false)
-                layoutGenzCardBinding
+            DYNAMIC_WIDTH_CARD -> {
+                layoutDynamicWidthCardBinding = LayoutDynamicWidthCardBinding.inflate(inflater, parent, false)
+                layoutDynamicWidthCardBinding
             }
         }
 
@@ -102,15 +97,13 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
                         }
                     }
 
-                    CENTER_CARD -> CenterCardViewHolder(layoutCenterCardBinding).bindCenterCard(this@item)
-
                     IMAGE_CARD -> ImageCardViewHolder(layoutImageCardBinding).bindImageCard(this@item)
 
                     SMALL_CARD_WITH_ARROW -> SmallCardWithArrowViewHolder(
                         layoutSmallCardWithArrowBinding
                     ).bindSmallCardWithArrow(this@item)
 
-                    GENZ_CARD -> GenzCardViewHolder(layoutGenzCardBinding).bindGenzCard(this@item)
+                    DYNAMIC_WIDTH_CARD -> DynamicWidthCardViewHolder(layoutDynamicWidthCardBinding).bindDynamicWidthCard(this@item)
 
                 }
             }
@@ -155,20 +148,4 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
         }
         hideMenu()
     }
-
-//    private fun handleMenu(position: Int? = null) {
-//        if (cardData.isNotEmpty()) {
-//            if (!cardData[0].swipeMenu && position != null) {
-//                val menuCard = Card("menu_card")
-//                menuCard.swipeMenu = true
-//                cardData.add(position, menuCard)
-//                notifyDataSetChanged()
-//            } else {
-//                cardData.removeAt(0)
-//                notifyDataSetChanged()
-//            }
-//        }
-//    }
-
-
 }
