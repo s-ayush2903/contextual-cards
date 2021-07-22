@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/no_connection_image_view"
-        android:layout_width="@dimen/dim_180dp"
-        android:layout_height="@dimen/dim_180dp"
+        android:layout_width="@dimen/dim_60dp"
+        android:layout_height="@dimen/dim_60dp"
         android:layout_marginBottom="@dimen/dim_40dp"
         android:src="@drawable/ic_error"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,11 +20,11 @@
         android:id="@+id/error_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_20dp"
-        android:layout_marginEnd="@dimen/dim_20dp"
+        android:layout_marginStart="@dimen/dim_40dp"
+        android:layout_marginEnd="@dimen/dim_40dp"
         android:textAlignment="center"
         android:textColor="@color/colorContextualCards"
-        android:textSize="@dimen/dim_30sp"
+        android:textSize="@dimen/dim_25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/no_connection_image_view" />

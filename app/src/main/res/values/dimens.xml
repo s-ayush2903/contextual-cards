@@ -8,6 +8,7 @@
     <dimen name="dim_23dp">23dp</dimen>
     <dimen name="dim_30dp">30dp</dimen>
     <dimen name="dim_40dp">40dp</dimen>
+    <dimen name="dim_60dp">60dp</dimen>
     <dimen name="dim_120dp">120dp</dimen>
     <dimen name="dim_130dp">130dp</dimen>
     <dimen name="dim_180dp">180dp</dimen>
@@ -17,6 +18,7 @@
     <!--For Text-->
     <dimen name="dim_18sp">18sp</dimen>
     <dimen name="dim_20sp">20sp</dimen>
+    <dimen name="dim_25sp">25sp</dimen>
     <dimen name="dim_30sp">30sp</dimen>
     <dimen name="dim_35sp">35sp</dimen>
 </resources>
