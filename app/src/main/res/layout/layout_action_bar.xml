@@ -12,19 +12,11 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="Fampay"
-            android:textColor="@color/colorContextualCards"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/logo_fampay" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_fampay_title"
+        />
 
     </LinearLayout>
 </androidx.appcompat.widget.Toolbar>
