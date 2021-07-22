@@ -1,6 +1,5 @@
 package `in`.stvayush.contextualcards.viewmodels
 
-import `in`.stvayush.contextualcards.ContextualCardsApplication
 import `in`.stvayush.contextualcards.ContextualCardsApplication.Companion.getContext
 import `in`.stvayush.contextualcards.R
 import `in`.stvayush.contextualcards.models.CardGroup
@@ -8,7 +7,6 @@ import `in`.stvayush.contextualcards.models.CardGroupObject
 import `in`.stvayush.contextualcards.networking.Repository
 import `in`.stvayush.contextualcards.utils.SharedPreferenceUtils
 import android.util.Log
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

@@ -1,9 +1,18 @@
 package `in`.stvayush.contextualcards.views.adapters
 
-import `in`.stvayush.contextualcards.databinding.*
+import `in`.stvayush.contextualcards.databinding.LayoutDynamicWidthCardBinding
+import `in`.stvayush.contextualcards.databinding.LayoutSmallCardWithArrowBinding
+import `in`.stvayush.contextualcards.databinding.LayoutSmallCardBinding
+import `in`.stvayush.contextualcards.databinding.LayoutBigCardBinding
+import `in`.stvayush.contextualcards.databinding.LayoutBigCardMenuBinding
+import `in`.stvayush.contextualcards.databinding.LayoutImageCardBinding
 import `in`.stvayush.contextualcards.models.Card
 import `in`.stvayush.contextualcards.models.CardGroup.DesignType
-import `in`.stvayush.contextualcards.models.CardGroup.DesignType.*
+import `in`.stvayush.contextualcards.models.CardGroup.DesignType.SMALL_CARD_WITH_ARROW
+import `in`.stvayush.contextualcards.models.CardGroup.DesignType.SMALL_DISPLAY_CARD
+import `in`.stvayush.contextualcards.models.CardGroup.DesignType.IMAGE_CARD
+import `in`.stvayush.contextualcards.models.CardGroup.DesignType.DYNAMIC_WIDTH_CARD
+import `in`.stvayush.contextualcards.models.CardGroup.DesignType.BIG_DISPLAY_CARD
 import `in`.stvayush.contextualcards.utils.SharedPreferenceUtils
 import `in`.stvayush.contextualcards.views.viewholders.CardViewHolder
 import android.view.LayoutInflater

@@ -1,6 +1,10 @@
 package `in`.stvayush.contextualcards.views.viewholders
 
-import `in`.stvayush.contextualcards.databinding.*
+import `in`.stvayush.contextualcards.databinding.LayoutDynamicWidthCardBinding
+import `in`.stvayush.contextualcards.databinding.LayoutSmallCardWithArrowBinding
+import `in`.stvayush.contextualcards.databinding.LayoutSmallCardBinding
+import `in`.stvayush.contextualcards.databinding.LayoutBigCardBinding
+import `in`.stvayush.contextualcards.databinding.LayoutImageCardBinding
 import `in`.stvayush.contextualcards.models.Card
 import `in`.stvayush.contextualcards.utils.CtaConfigurer.configureCta
 import `in`.stvayush.contextualcards.utils.DeepLinkParser.processDeepLink
