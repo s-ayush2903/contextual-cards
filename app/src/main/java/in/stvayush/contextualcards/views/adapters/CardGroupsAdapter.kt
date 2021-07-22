@@ -1,7 +1,6 @@
 package `in`.stvayush.contextualcards.views.adapters
 
 import `in`.stvayush.contextualcards.databinding.LayoutCardGroupBinding
-import `in`.stvayush.contextualcards.models.Card
 import `in`.stvayush.contextualcards.models.CardGroup
 import `in`.stvayush.contextualcards.views.viewholders.CardGroupViewHolder
 import android.content.Context
@@ -16,20 +15,17 @@ import androidx.recyclerview.widget.RecyclerView
  * Authored by Ayush Shrivastava on 22/7/21
  */
 
-
-// see if we need to go back to RV.VH
-class CardGroupsAdapter(private val context: Context) : RecyclerView.Adapter<CardGroupViewHolder>() {
+class CardGroupsAdapter(private val context: Context) :
+    RecyclerView.Adapter<CardGroupViewHolder>() {
     private val TAG = "CardGroupsAdapter"
     private val cardGroupData = ArrayList<CardGroup>()
 
+    private lateinit var cardGroupBinding: LayoutCardGroupBinding
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardGroupViewHolder {
-        return CardGroupViewHolder(
-            LayoutCardGroupBinding.inflate(
-                LayoutInflater.from(parent.context),
-                parent,
-                false
-            )
-        )
+        cardGroupBinding =
+            LayoutCardGroupBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return CardGroupViewHolder(cardGroupBinding)
     }
 
     override fun onBindViewHolder(holder: CardGroupViewHolder, position: Int) {

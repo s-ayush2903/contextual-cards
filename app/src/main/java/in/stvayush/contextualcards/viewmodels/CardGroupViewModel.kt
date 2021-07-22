@@ -63,6 +63,7 @@ class CardGroupViewModel : ViewModel() {
 
                             }
                         }
+                    fetchSuccessful.value = false
                     }
 
                     override fun onComplete() {

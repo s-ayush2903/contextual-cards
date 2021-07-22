@@ -45,6 +45,8 @@ def rx_android_version = "3.0.0"
 def retrofit_rx_adapter_version = "2.9.0"
 def glide_version = "4.11.0"
 def preference_version = "1.1.1"
+def shimmer_loading_version = "v1.3"
+def swipe_refresh_version = "1.1.0"
 
 dependencies {
 
@@ -70,7 +72,14 @@ dependencies {
   implementation "com.github.bumptech.glide:glide:$glide_version"
   annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
+  // SharedPrefs-ktx
   implementation "androidx.preference:preference-ktx:$preference_version"
+
+  // Shimmer for RecyclerView
+  implementation "com.github.sharish:ShimmerRecyclerView:$shimmer_loading_version"
+
+  // SwipeRefresh Layout
+  implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_version"
 
   testImplementation 'junit:junit:4.+'
   androidTestImplementation 'androidx.test.ext:junit:1.1.3'
