@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/small_card_view"
-    android:layout_width="220dp"
+    android:layout_width="@dimen/dim_220dp"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="@dimen/dim_5dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="@dimen/dim_10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -18,9 +18,9 @@
 
         <ImageView
             android:id="@+id/small_card_icon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="@dimen/dim_40dp"
+            android:layout_height="@dimen/dim_40dp"
+            android:layout_marginStart="@dimen/dim_10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,8 +29,8 @@
             android:id="@+id/small_card_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:textSize="20sp"
+            android:layout_marginStart="@dimen/dim_23dp"
+            android:textSize="@dimen/dim_20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/small_card_icon"
@@ -41,9 +41,9 @@
             android:id="@+id/small_card_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="18sp"
+            android:layout_marginTop="@dimen/dim_3dp"
+            android:layout_marginEnd="@dimen/dim_10dp"
+            android:textSize="@dimen/dim_18sp"
             app:layout_constraintEnd_toEndOf="@id/small_card_title"
             app:layout_constraintStart_toStartOf="@id/small_card_title"
             app:layout_constraintTop_toBottomOf="@id/small_card_title"

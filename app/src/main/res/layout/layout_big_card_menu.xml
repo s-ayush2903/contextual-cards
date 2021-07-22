@@ -5,13 +5,13 @@
     android:id="@+id/ic_card_view"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
-    app:cardCornerRadius="10dp">
+    android:layout_margin="@dimen/dim_5dp"
+    app:cardCornerRadius="@dimen/dim_10dp">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:padding="10dp"
+        android:padding="@dimen/dim_10dp"
         android:gravity="center_vertical"
         android:orientation="vertical">
 
@@ -19,15 +19,15 @@
             android:id="@+id/menu_remind_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="@dimen/dim_5dp"
+            android:layout_marginStart="@dimen/dim_5dp"
+            android:layout_marginEnd="@dimen/dim_5dp"
+            android:layout_marginBottom="@dimen/dim_20dp"
             android:background="@drawable/rounded_button_background"
             android:backgroundTint="@color/colorMenuButton"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="@dimen/dim_10dp">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -37,7 +37,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="remind_later"
+                android:text="@string/remind"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -45,22 +45,22 @@
             android:id="@+id/menu_dismiss_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_margin="@dimen/dim_5dp"
             android:background="@drawable/rounded_button_background"
             android:backgroundTint="@color/colorMenuButton"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="10dp">
+            android:padding="@dimen/dim_10dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/dim_40dp"
+                android:layout_height="@dimen/dim_40dp"
                 android:src="@drawable/ic_dismiss_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="dismiss_now"
+                android:text="@string/dismiss"
                 android:textColor="@color/black" />
         </LinearLayout>
 

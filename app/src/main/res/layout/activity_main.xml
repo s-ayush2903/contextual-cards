@@ -31,13 +31,13 @@
                 android:id="@+id/rv_root"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp" />
+                android:layout_marginTop="@dimen/dim_5dp" />
 
             <com.cooltechworks.views.shimmer.ShimmerRecyclerView
                 android:id="@+id/shimmer_recycler_view_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:shimmer_demo_angle="20"
+                app:shimmer_demo_angle="25"
                 app:shimmer_demo_child_count="10"
                 app:shimmer_demo_grid_child_count="2"
                 app:shimmer_demo_layout_manager_type="linear_vertical" />

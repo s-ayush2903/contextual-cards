@@ -5,26 +5,26 @@
     android:id="@+id/small_card_with_arrow_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_margin="@dimen/dim_5dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="@dimen/dim_10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:layout_margin="20dp"
+        android:layout_margin="@dimen/dim_20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/small_card_with_arrow_image"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="5dp"
+            android:layout_width="@dimen/dim_40dp"
+            android:layout_height="@dimen/dim_40dp"
+            android:layout_marginTop="@dimen/dim_5dp"
+            android:layout_marginEnd="@dimen/dim_5dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,9 +32,9 @@
             android:id="@+id/small_card_with_arrow_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="@dimen/dim_15dp"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="@dimen/dim_18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/small_card_with_arrow_image"
             app:layout_constraintStart_toEndOf="@id/small_card_with_arrow_image"

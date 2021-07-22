@@ -10,11 +10,11 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="@dimen/dim_10dp">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="@dimen/dim_30dp"
         android:src="@drawable/ic_fampay_title"
         />
 

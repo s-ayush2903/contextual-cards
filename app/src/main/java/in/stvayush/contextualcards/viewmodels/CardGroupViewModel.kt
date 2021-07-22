@@ -1,10 +1,14 @@
 package `in`.stvayush.contextualcards.viewmodels
 
+import `in`.stvayush.contextualcards.ContextualCardsApplication
+import `in`.stvayush.contextualcards.ContextualCardsApplication.Companion.getContext
+import `in`.stvayush.contextualcards.R
 import `in`.stvayush.contextualcards.models.CardGroup
 import `in`.stvayush.contextualcards.models.CardGroupObject
 import `in`.stvayush.contextualcards.networking.Repository
 import `in`.stvayush.contextualcards.utils.SharedPreferenceUtils
 import android.util.Log
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -42,23 +46,21 @@ class CardGroupViewModel : ViewModel() {
                     }
 
                     override fun onError(throwable: Throwable?) {
-                        // FIXME: 21/7/21
-                        // update the UI accordingly on the basis of error observed
                         when (throwable) {
                             is IOException -> {
-                                errorMessage = "IO"
+                                errorMessage = getContext().getString(R.string.check_connection)
                                 Log.e(TAG, "onError: IO Exception: ", throwable)
                             }
                             is TimeoutException -> {
-                                errorMessage = "Timeout"
+                                errorMessage = getContext().getString(R.string.timeout_error)
                                 Log.e(TAG, "onError: Timed out: ", throwable)
                             }
                             is HttpException -> {
-                                errorMessage = "HTTP Exception"
+                                errorMessage = getContext().getString(R.string.http_exception)
                                 Log.e(TAG, "onError: Http Exception: ", throwable)
                             }
                             else -> {
-                                errorMessage = "Unknown problem occurred"
+                                errorMessage = getContext().getString(R.string.unknown_error)
                                 throwable?.let { Log.e(TAG, "onError: Unkonwn error: ", it) }
 
                             }

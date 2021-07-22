@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/image_card"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:layout_margin="5dp"
+    android:layout_height="@dimen/dim_180dp"
+    android:layout_margin="@dimen/dim_5dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="10dp" >
+    app:cardCornerRadius="@dimen/dim_10dp" >
 
     <ImageView
         android:layout_width="match_parent"
