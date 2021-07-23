@@ -15,6 +15,10 @@ import androidx.recyclerview.widget.RecyclerView
  * Authored by Ayush Shrivastava on 22/7/21
  */
 
+/**
+ * An adapter that binds the [CardGroup]s data to render on the screen
+ * A point to note is that for each [CardGroup], a separate and independent [RecyclerView] is being created
+ */
 class CardGroupsAdapter(private val context: Context) :
     RecyclerView.Adapter<CardGroupViewHolder>() {
     private val TAG = "CardGroupsAdapter"
@@ -38,7 +42,8 @@ class CardGroupsAdapter(private val context: Context) :
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
                     if (newState == AbsListView.OnScrollListener.SCROLL_STATE_FLING) {
-                        Log.d(TAG, "onScrollStateChanged: implement it via hiding menu")
+                        Log.d(TAG, "onScrollStateChanged: hiding menu")
+                        cardsAdapter.hideMenu()
                     }
                 }
             })
@@ -54,6 +59,5 @@ class CardGroupsAdapter(private val context: Context) :
         cardGroupData.clear()
         cardGroupData.addAll(cardGroupList)
         notifyDataSetChanged()
-
     }
 }

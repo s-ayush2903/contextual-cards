@@ -9,6 +9,11 @@ import android.widget.Button
  * Authored by Ayush Shrivastava on 22/7/21
  */
 
+/**
+ * An object containing an extension function on [Button] for Configuring [Cta] (Call To Action) on it,
+ * the function is on button and takes a [Cta] and uses its properties to set the UI of button and
+ * install link(s) in it (if available) to trigger the intended Action
+ */
 object CtaConfigurer {
     fun Button.configureCta(cta: Cta?) {
         cta?.let {

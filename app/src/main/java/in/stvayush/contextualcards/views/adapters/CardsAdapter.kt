@@ -24,6 +24,13 @@ import androidx.viewbinding.ViewBinding
  * Authored by Ayush Shrivastava on 21/7/21
  */
 
+/**
+ * An [Adapter] that inflates & binds cardLayouts
+ * It also takes care of itemView type and displaying the menu accordingly
+ * It takes
+ * @param [designType] in order to parse what type of card is obtained from server response and bind/inflate layout accordingly
+ * @param [groupId] in order to take note of the preference selected by user on HC3 card for displaying in the next run or never
+ */
 class CardsAdapter(private val designType: DesignType, private val groupId: Long) :
     RecyclerView.Adapter<CardViewHolder>() {
     private val TAG = "CardsAdapter"
@@ -42,6 +49,10 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
     private val SHOW_MENU = 1
     private val HIDE_MENU = 2
 
+    /**
+     * Initialize binding and inflate the layout depending upon the [DesignType] of the [CardGroup]
+     * observed, one by one. without wasting resources
+     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewHolder {
         val inflater: LayoutInflater = LayoutInflater.from(parent.context)
         lateinit var binding: ViewBinding
@@ -82,6 +93,9 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
         return CardViewHolder(binding)
     }
 
+    /**
+     * Bind those inflated layouts on the same ideology mentioned above
+     */
     override fun onBindViewHolder(holder: CardViewHolder, position: Int) {
         val cardItem = cardData[position]
         with(cardItem) item@{
@@ -142,7 +156,7 @@ class CardsAdapter(private val designType: DesignType, private val groupId: Long
         }
     }
 
-    private fun hideMenu() {
+    fun hideMenu() {
         if (cardData.isNotEmpty() && cardData[0].swipeMenu) {
             cardData.removeAt(0)
             notifyDataSetChanged()

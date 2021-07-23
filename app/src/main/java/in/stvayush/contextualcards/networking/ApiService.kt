@@ -4,6 +4,12 @@ import `in`.stvayush.contextualcards.models.CardGroupObject
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 
+/**
+ * A gateway to communication with web, which hits the
+ * @param ENDPOINT with specified @param BASE_URL and
+ * returns Observable [CardGroupObject]
+ */
+
 interface ApiService {
 
     @GET(ENDPOINT)

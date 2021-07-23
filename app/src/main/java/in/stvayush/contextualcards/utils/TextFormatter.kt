@@ -13,6 +13,19 @@ import android.widget.TextView
  */
 
 object TextFormatter {
+    /**
+     * An extension function on a [TextView] which takes
+     * @param [formattedText] which comprises of [Entities] which contain properties
+     * that are supposed to be used for formatting the text to be rendered on screen
+     * as a [TextView].
+     * @param plainText is passed here as a fallbackText, in case if there arise any problem(s)
+     * while parsing the [formattedText]
+     *
+     * The reason why this is an extension on [TextView] is that, [TextView] is the final thing
+     * that is going to be displayed on the device rather [plainText] which is not
+     * directly being rendered on the screen. So it seems more intuitive to make it an extension
+     * on [TextView] rather [plainText]
+     */
     fun TextView.format(formattedText: FormattedText?, plainText: String?) {
         this.text = if (formattedText == null) {
             plainText

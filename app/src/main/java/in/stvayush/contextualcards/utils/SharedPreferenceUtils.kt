@@ -8,10 +8,17 @@ import androidx.preference.PreferenceManager
  * Authored by Ayush Shrivastava on 22/7/21
  */
 
+/**
+ * SharedPreferences store for the application
+ */
 object SharedPreferenceUtils {
 
     private const val CONTEXTUAL_PREFS = "contextual_card_prefs"
 
+    /**
+     * Function used to save groupId locally using a [String] of Id(s) separated by commas[',']
+     * which takes @param [groupId], the Id of a [CardGroup] that needs to be excluded
+     */
     fun addGroupId(groupId: String) {
         lateinit var storedString: String
         val preferences =
@@ -23,6 +30,12 @@ object SharedPreferenceUtils {
         }
     }
 
+    /**
+     * Functions to check if specific group needs to be excluded or not
+     * which takes one parameter:
+     * @param groupId a unique identifier of the group which may/(may not) be excluded
+     * @return true if the group needs to be excluded, false otherwise
+     */
     fun excludeCardGroup(groupId: String): Boolean {
         val prefs =
             PreferenceManager.getDefaultSharedPreferences(ContextualCardsApplication.getContext())

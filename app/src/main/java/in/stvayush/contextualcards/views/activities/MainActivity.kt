@@ -13,8 +13,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
+/**
+ * Entry point to the Application, from where majority of the calls are "created"
+ */
 class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
     private val TAG = "MainActivity"
+
+    /** Lazily initialize the [CardGroupViewModel] to avoid delay in Activity creation */
     private val cardGroupViewModel: CardGroupViewModel by lazy {
         ViewModelProvider(this).get(CardGroupViewModel::class.java)
     }
@@ -51,18 +56,24 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         cardGroupViewModel.fetchCards()
     }
 
+    /** Trigger the method in [cardGroupViewModel] and observe the MutableLiveData,
+     * [cardGroupViewModel.fetchSuccssful], and handle UI accordingly as per its boolean value */
     private fun fetchData() {
         cardGroupViewModel.fetchSuccessful.observe(this, {
             it?.let {
-                if (it) {
-                    renderData(cardGroupViewModel.cardGroup)
-                } else {
-                    displayErrorScreen(cardGroupViewModel.errorMessage)
+                with(cardGroupViewModel) {
+                    if (it) {
+                        renderData(cardGroup)
+                    } else {
+                        displayErrorScreen(errorMessage)
+                    }
                 }
             }
         })
     }
 
+    /** Handle shimmer, swipeRefresh state, and visibility of other views,
+     * also setCardGroupData for displaying it on screen */
     private fun renderData(cardGroups: List<CardGroup>) {
         Log.d(TAG, "renderData: Rendering data....")
         with(activityMainBinding) {
@@ -74,6 +85,7 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         }
     }
 
+    /** Similarly handle views to display the error screen */
     private fun displayErrorScreen(errorMessage: String) {
         with(activityMainBinding) {
             rootSwipeRefreshLayout.isRefreshing = false
@@ -83,6 +95,7 @@ class MainActivity : AppCompatActivity(), SwipeRefreshLayout.OnRefreshListener {
         }
     }
 
+    /** Goes the similar way for showing the loading screen */
     private fun displayLoadingScreen() {
         with(activityMainBinding) {
             rootSwipeRefreshLayout.isRefreshing = false

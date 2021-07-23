@@ -8,6 +8,11 @@ import android.net.Uri
  * Authored by Ayush Shrivastava on 22/7/21
  */
 
+/**
+ * An object which handles all the deepLinks in the codebase,
+ * it takes the Link as a string and creates a new [Intent]
+ * obtaining the [Context] from [ContextualCardsApplication] to start the created [Intent]
+ */
 object DeepLinkParser {
     fun processDeepLink(deepLinkUrl: String): Boolean {
         val intent = Intent(Intent.ACTION_VIEW).apply {
