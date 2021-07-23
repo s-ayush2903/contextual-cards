@@ -1,4 +1,4 @@
-# contextual-cards
+# Contextual-Cards
 |GH Actions CI Status|
 |--|
 |[![application-ci](https://github.com/s-ayush2903/contextual-cards/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/s-ayush2903/contextual-cards/actions/workflows/ci.yml)|
@@ -14,6 +14,12 @@ _Plug & Play_ service which can work in multiple scenarios like in activities,
 fragments, custom layouts / viewGroups, etc. It is built as an assignment by the
 Fampay Team.
 
+## Getting the APK
+* Directly through this link: [master/apk](https://github.com/s-ayush2903/contextual-cards/blob/master/apk/ContextualCards.apk)
+* Obtaining from the Releases section: [contextual-cards/releases](https://github.com/s-ayush2903/contextual-cards/releases/latest)
+* From the latest Job act GH-Actions(as a CI Artifact): [here](https://github.com/s-ayush2903/contextual-cards/actions?query=branch%3Amaster+is%3Asuccess)
+
+(for getting artifacts from CI, read the documentation [here](https://docs.github.com/en/actions/managing-workflow-runs/downloading-workflow-artifacts), or simply open the latest workflow from above link and scroll down a bit, you'll be able to find the `Contextual Cards APK` artifact.)
 ## Screenshots
 |Application Icon|Splash Screen|
 |--|--|
