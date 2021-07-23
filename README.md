@@ -17,7 +17,7 @@ Fampay Team.
 ## Screenshots
 |Application Icon|Splash Screen|
 |--|--|
-|<img src="https://files.gitter.im/5e46e1d4d73408ce4fd9acef/4yaj/icon.jpg" height=550>|<img src="https://files.gitter.im/5e46e1d4d73408ce4fd9acef/7tdM/splash_screen.jpghttps://files.gitter.im/5e46e1d4d73408ce4fd9acef/YyPL/splash_screen.jpg" height=550>|
+|<img src="https://files.gitter.im/5e46e1d4d73408ce4fd9acef/4yaj/icon.jpg" height=550>|<img src="https://files.gitter.im/5e46e1d4d73408ce4fd9acef/7tdM/splash_screen.jpg" height=550>|
 ---
 
 |Home Screen Overview|Big Card|
