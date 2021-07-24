@@ -1,21 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8" ?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_action_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white">
+    android:background="@color/white"
+>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="@dimen/dim_10dp">
+        android:padding="@dimen/dim_10dp"
+    >
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dim_30dp"
-        android:src="@drawable/ic_fampay_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dim_30dp"
+            android:src="@drawable/ic_fampay_title"
         />
 
     </LinearLayout>

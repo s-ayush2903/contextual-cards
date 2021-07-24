@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,14 +6,16 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/dim_5dp"
-    app:cardCornerRadius="@dimen/dim_10dp">
+    app:cardCornerRadius="@dimen/dim_10dp"
+>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:padding="@dimen/dim_10dp"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="vertical"
+    >
 
         <LinearLayout
             android:id="@+id/menu_remind_icon"
@@ -27,18 +29,21 @@
             android:backgroundTint="@color/colorMenuButton"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="@dimen/dim_10dp">
+            android:padding="@dimen/dim_10dp"
+        >
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_remind_icon" />
+                android:src="@drawable/ic_remind_icon"
+            />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/remind"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+            />
         </LinearLayout>
 
         <LinearLayout
@@ -50,18 +55,21 @@
             android:backgroundTint="@color/colorMenuButton"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="@dimen/dim_10dp">
+            android:padding="@dimen/dim_10dp"
+        >
 
             <ImageView
                 android:layout_width="@dimen/dim_40dp"
                 android:layout_height="@dimen/dim_40dp"
-                android:src="@drawable/ic_dismiss_icon" />
+                android:src="@drawable/ic_dismiss_icon"
+            />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dismiss"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+            />
         </LinearLayout>
 
     </LinearLayout>

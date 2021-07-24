@@ -1,37 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8" ?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWindowBackground"
     android:orientation="vertical"
-    tools:context=".views.activities.MainActivity">
+    tools:context=".views.activities.MainActivity"
+>
 
     <include
         android:id="@+id/action_bar_layout"
-        layout="@layout/layout_action_bar" />
+        layout="@layout/layout_action_bar"
+    />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/root_swipe_refresh_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+    >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+        >
 
             <include
                 android:id="@+id/error_layout"
                 layout="@layout/layout_no_connection"
-                android:visibility="gone" />
+                android:visibility="gone"
+            />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_root"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dim_5dp" />
+                android:layout_marginTop="@dimen/dim_5dp"
+            />
 
             <com.cooltechworks.views.shimmer.ShimmerRecyclerView
                 android:id="@+id/shimmer_recycler_view_layout"
@@ -40,7 +47,8 @@
                 app:shimmer_demo_angle="25"
                 app:shimmer_demo_child_count="10"
                 app:shimmer_demo_grid_child_count="2"
-                app:shimmer_demo_layout_manager_type="linear_vertical" />
+                app:shimmer_demo_layout_manager_type="linear_vertical"
+            />
         </LinearLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

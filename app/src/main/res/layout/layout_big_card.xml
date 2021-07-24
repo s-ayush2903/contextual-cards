@@ -1,22 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><!--HC3 Card-->
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8" ?>
+<!--HC3 Card-->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/big_card_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/dim_5dp"
-    app:cardCornerRadius="@dimen/dim_10dp">
+    app:cardCornerRadius="@dimen/dim_10dp"
+>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+    >
 
         <ImageView
             android:id="@+id/image_big_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+        />
 
         <TextView
             android:id="@+id/tv_title"
@@ -28,7 +33,8 @@
             android:textSize="@dimen/dim_35sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Sample Title" />
+            tools:text="Sample Title"
+        />
 
         <TextView
             android:id="@+id/tv_description"
@@ -41,7 +47,8 @@
             app:layout_constraintBottom_toTopOf="@id/button_action"
             app:layout_constraintStart_toStartOf="@id/tv_title"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
-            tools:text="A sample description to see how it renders" />
+            tools:text="A sample description to see how it renders"
+        />
 
         <Button
             android:id="@+id/button_action"
@@ -52,7 +59,8 @@
             app:layout_constraintStart_toStartOf="@id/tv_title"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="@dimen/dim_15dp"
-            tools:text="Button" />
+            tools:text="Button"
+        />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
