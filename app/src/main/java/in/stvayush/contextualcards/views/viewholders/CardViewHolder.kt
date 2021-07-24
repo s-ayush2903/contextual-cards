@@ -38,7 +38,7 @@ class CardViewHolder(viewBinding: ViewBinding) : RecyclerView.ViewHolder(viewBin
           smallCardTitle.format(formattedTitle, title)
           smallCardDescription.format(formattedDescription, description)
           icon?.imgUrl?.let { smallCardIcon.loadImage(it) }
-          url?.let { smallCardView.setOnClickListener {   processDeepLink(url) } }
+          url?.let { smallCardView.setOnClickListener { processDeepLink(url) } }
         }
       }
     }
