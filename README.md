@@ -1,7 +1,7 @@
 # contextual-cards
-|GH Actions CI Status|
-|--|
-|[![application-ci](https://github.com/s-ayush2903/contextual-cards/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/s-ayush2903/contextual-cards/actions/workflows/ci.yml)|
+|GH Actions CI Status|CI Lint Status|
+|--|--|
+|[![application-ci](https://github.com/s-ayush2903/contextual-cards/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/s-ayush2903/contextual-cards/actions/workflows/ci.yml)|[![static-analysis](https://github.com/s-ayush2903/contextual-cards/actions/workflows/staticAnalysis.yml/badge.svg?branch=linted&event=push)](https://github.com/s-ayush2903/contextual-cards/actions/workflows/staticAnalysis.yml)|
 
 Hi more than happy to see you here! Contextual Cards is an application that
 renders the data fetched from the server on the screen. The cards fetched are
