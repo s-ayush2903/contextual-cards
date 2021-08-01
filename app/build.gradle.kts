@@ -81,3 +81,14 @@ dependencies {
         androidTestImplementation(espressoCore)
     }
 }
+
+afterEvaluate {
+    android.applicationVariants.all {
+        var productFlavor = ""
+        this.productFlavors.forEach {
+            productFlavor += it.name.capitalize()
+        }
+        val buildType: String = this.buildType.name.capitalize()
+        tasks["generate${productFlavor}${buildType}Assets"].dependsOn(tasks["cargoBuild"])
+    }
+}
